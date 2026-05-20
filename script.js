@@ -110,7 +110,7 @@ function applyTheme(theme) {
 
 function typeMessage(message) {
   window.clearInterval(typingTimer);
-  typingText.textContent = "";
+  typingText.textContent = data.reply;
 
   let index = 0;
   typingTimer = window.setInterval(() => {
