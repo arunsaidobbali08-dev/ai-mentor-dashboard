@@ -274,7 +274,7 @@ try {
     mentorHistory.push({ role: "assistant", content: data.answer });
     mentorQuestion.value = "";
     setAvatarEmotion("teaching");
-    typeMessage(data.answer);
+    typeMessage(data.reply);
     setApiStatus(`Answered with ${data.model}`, "online");
   } catch (error) {
     setAvatarEmotion("sleepy");
