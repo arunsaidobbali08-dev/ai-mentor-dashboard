@@ -258,7 +258,13 @@ mentorForm.addEventListener("submit", async (event) => {
       }),
     });
 
-    const data = await response.json();
+    let data = {};
+
+try {
+  data = await response.json();
+} catch (error) {
+  data.reply = "API response failed. Check backend/server.";
+};
 
     if (!response.ok) {
       throw new Error(data.error || "Mentor API request failed.");
