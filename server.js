@@ -141,6 +141,7 @@ async function handleMentor(request, response) {
   }
 
   const answer = extractAnswer(data);
+console.log(JSON.stringify(data, null, 2));
 
 sendJson(response, 200, {
   reply: answer || "I could not produce an answer.",
