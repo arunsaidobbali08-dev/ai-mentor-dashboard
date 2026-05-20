@@ -275,7 +275,7 @@ try {
     mentorQuestion.value = "";
     setAvatarEmotion("teaching");
     typeMessage(data.reply);
-    setApiStatus(`Answered with ${data.model}`, "online");
+    setApiStatus("Mentor online", "online");
   } catch (error) {
     setAvatarEmotion("sleepy");
     typeMessage(error.message || "The mentor API is not reachable yet. Check the local server and API key.");
