@@ -271,7 +271,7 @@ try {
     }
 
     mentorHistory.push({ role: "user", content: question });
-    mentorHistory.push({ role: "assistant", content: data.answer });
+    mentorHistory.push({ role: "assistant", content: data.reply });
     mentorQuestion.value = "";
     setAvatarEmotion("teaching");
     typeMessage(data.reply);
