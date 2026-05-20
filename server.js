@@ -131,9 +131,12 @@ async function handleMentor(request, response) {
   }
 
   const answer = extractAnswer(data);
-  sendJson(response, 200, {
-    answer: answer || "I could not produce an answer. Try asking the question more directly.",
-    model: MODEL,
+
+sendJson(response, 200, {
+  reply: answer || "I could not produce an answer.",
+  model: MODEL,
+});
+ 
   });
 }
 
