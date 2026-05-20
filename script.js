@@ -1,22 +1,22 @@
 const avatarMap = {
   happy: {
     label: "Happy",
-    image: "output/imagegen/emotions/clean-transparent/ai-mentor-happy-celebrating-clean-transparent.png",
+    image: "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
     message: "Nice. Celebrate the win, then ship the next small piece. Momentum comes from finished tasks.",
   },
   thinking: {
     label: "Thinking",
-    image: "output/imagegen/emotions/clean-transparent/ai-mentor-thinking-analyzing-clean-transparent.png",
+    image: "https://cdn-icons-png.flaticon.com/512/4712/4712035.png",
     message: "Pause and analyze the problem. Define the input, the output, and the smallest working version.",
   },
   teaching: {
     label: "Teaching",
-    image: "output/imagegen/emotions/clean-transparent/ai-mentor-teaching-explaining-clean-transparent.png",
+    image: "https://cdn-icons-png.flaticon.com/512/4712/4712109.png",
     message: "Today we build first, then study the gap. One concept, one example, one exercise, one review.",
   },
   sleepy: {
     label: "Sleepy",
-    image: "output/imagegen/emotions/clean-transparent/ai-mentor-sleepy-tired-clean-transparent.png",
+    image: "https://cdn-icons-png.flaticon.com/512/4712/4712058.png",
     message: "Energy is low. Do a 10-minute cleanup task instead of pretending you can do a deep session.",
   },
 };
