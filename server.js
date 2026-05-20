@@ -67,17 +67,27 @@ function extractAnswer(data) {
   }
 
   const pieces = [];
+
   for (const item of data.output || []) {
     for (const content of item.content || []) {
-      if (content.type === "output_text" && content.text) {
-        pieces.push(content.text);
+
+      if (content.type === "output_text") {
+
+        if (typeof content.text === "string") {
+          pieces.push(content.text);
+        }
+
+        else if (content.text && typeof content.text.value === "string") {
+          pieces.push(content.text.value);
+        }
+
       }
+
     }
   }
 
   return pieces.join("\n").trim();
 }
-
 async function handleMentor(request, response) {
   if (!API_KEY) {
     sendJson(response, 500, {
