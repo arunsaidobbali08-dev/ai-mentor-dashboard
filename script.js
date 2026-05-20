@@ -274,8 +274,7 @@ try {
     mentorHistory.push({ role: "assistant", content: data.reply });
     mentorQuestion.value = "";
     setAvatarEmotion("teaching");
-    typeMessage(data.reply);
-    setApiStatus("Mentor online", "online");
+document.querySelector(".mentor-response").textContent = data.reply;    setApiStatus("Mentor online", "online");
   } catch (error) {
     setAvatarEmotion("sleepy");
     typeMessage(error.message || "The mentor API is not reachable yet. Check the local server and API key.");
