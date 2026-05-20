@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Mentor Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="lesson-sidebar" aria-label="Lesson sidebar">
+      <div class="brand-lockup">
+        <div class="brand-mark">AI</div>
+        <div>
+          <p class="eyebrow">Mentor OS</p>
+          <h1>Skill Dashboard</h1>
+        </div>
+      </div>
+
+      <nav class="lesson-list" aria-label="Study tracks">
+        <button class="lesson-item active" data-topic="HTML">
+          <span class="lesson-code">01</span>
+          <span>
+            <strong>HTML Structure</strong>
+            <small>Build the page skeleton</small>
+          </span>
+        </button>
+        <button class="lesson-item" data-topic="CSS">
+          <span class="lesson-code">02</span>
+          <span>
+            <strong>CSS Layout</strong>
+            <small>Grid, spacing, responsive UI</small>
+          </span>
+        </button>
+        <button class="lesson-item" data-topic="JavaScript">
+          <span class="lesson-code">03</span>
+          <span>
+            <strong>JavaScript Logic</strong>
+            <small>Events, state, functions</small>
+          </span>
+        </button>
+        <button class="lesson-item" data-topic="AI Tools">
+          <span class="lesson-code">04</span>
+          <span>
+            <strong>AI Tools</strong>
+            <small>Prompts, workflows, automation</small>
+          </span>
+        </button>
+        <button class="lesson-item" data-topic="Freelancing">
+          <span class="lesson-code">05</span>
+          <span>
+            <strong>Freelancing</strong>
+            <small>Offers, outreach, delivery</small>
+          </span>
+        </button>
+      </nav>
+
+      <div class="streak-card">
+        <span>Current streak</span>
+        <strong><span id="streakCount">7</span> days</strong>
+        <div class="mini-bars" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+      </div>
+    </aside>
+
+    <main class="mentor-stage">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Today's session</p>
+          <h2 id="sessionTitle">HTML Structure</h2>
+        </div>
+        <div class="topbar-actions">
+          <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="true">
+            <span class="theme-toggle-track">
+              <span class="theme-toggle-thumb"></span>
+            </span>
+            <span id="themeLabel">Dark</span>
+          </button>
+          <div class="focus-chip">
+            <span></span>
+            45 min focus
+          </div>
+        </div>
+      </header>
+
+      <section class="avatar-zone" aria-label="AI mentor avatar">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="holo-panel holo-left">
+          <span>Lesson</span>
+          <strong id="lessonMetric">01 / 05</strong>
+        </div>
+        <div class="holo-panel holo-right">
+          <span>XP</span>
+          <strong id="xpMetric">420</strong>
+        </div>
+        <img id="mentorAvatar" class="mentor-avatar" src="output/imagegen/emotions/clean-transparent/ai-mentor-teaching-explaining-clean-transparent.png" alt="AI mentor avatar">
+      </section>
+
+      <section class="dialogue-panel" aria-live="polite">
+        <div class="mentor-status">
+          <span id="emotionLabel">Teaching</span>
+          <i></i>
+        </div>
+        <p id="typingText" class="typing-text"></p>
+        <form id="mentorForm" class="mentor-form">
+          <label class="sr-only" for="mentorQuestion">Ask your AI mentor</label>
+          <input id="mentorQuestion" type="text" autocomplete="off" placeholder="Ask your mentor about HTML, AI tools, freelancing, or today's task">
+          <button id="askMentorBtn" type="submit">Ask</button>
+        </form>
+        <p id="apiStatus" class="api-status">Local API bridge ready</p>
+      </section>
+
+      <div class="emotion-dock" aria-label="Avatar emotions">
+        <button class="emotion-btn" data-emotion="happy">
+          <span>Happy</span>
+        </button>
+        <button class="emotion-btn" data-emotion="thinking">
+          <span>Thinking</span>
+        </button>
+        <button class="emotion-btn active" data-emotion="teaching">
+          <span>Teaching</span>
+        </button>
+        <button class="emotion-btn" data-emotion="sleepy">
+          <span>Sleepy</span>
+        </button>
+      </div>
+    </main>
+
+    <aside class="right-panel" aria-label="Daily goals and progress">
+      <section class="panel-block goals-panel">
+        <div class="panel-heading">
+          <p class="eyebrow">Daily goals</p>
+          <strong id="goalCount">2 / 4</strong>
+        </div>
+        <label class="goal-row">
+          <input type="checkbox" checked>
+          <span>Complete one lesson</span>
+        </label>
+        <label class="goal-row">
+          <input type="checkbox" checked>
+          <span>Write 20 lines of code</span>
+        </label>
+        <label class="goal-row">
+          <input type="checkbox">
+          <span>Finish the mini-project</span>
+        </label>
+        <label class="goal-row">
+          <input type="checkbox">
+          <span>Send one freelance pitch</span>
+        </label>
+      </section>
+
+      <section class="panel-block progress-panel">
+        <div class="panel-heading">
+          <p class="eyebrow">Progress</p>
+          <strong id="progressPercent">58%</strong>
+        </div>
+        <div class="progress-ring" aria-label="Progress score">
+          <svg viewBox="0 0 120 120" role="img">
+            <circle class="ring-bg" cx="60" cy="60" r="48"></circle>
+            <circle id="progressCircle" class="ring-fill" cx="60" cy="60" r="48"></circle>
+          </svg>
+          <div>
+            <strong id="ringPercent">58%</strong>
+            <span>overall</span>
+          </div>
+        </div>
+        <div class="skill-bars">
+          <div>
+            <span>Web Dev</span>
+            <i style="--value: 64%"></i>
+          </div>
+          <div>
+            <span>AI Tools</span>
+            <i style="--value: 48%"></i>
+          </div>
+          <div>
+            <span>Freelance</span>
+            <i style="--value: 31%"></i>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel-block action-panel">
+        <p class="eyebrow">Mini-project</p>
+        <h3 id="projectTitle">Build a personal intro card</h3>
+        <p id="projectText">Use one heading, one paragraph, one button, and a clean card layout.</p>
+        <button id="completeProjectBtn" class="primary-action">Mark project done</button>
+      </section>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
