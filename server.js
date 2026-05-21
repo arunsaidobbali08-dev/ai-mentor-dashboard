@@ -144,7 +144,7 @@ async function handleMentor(request, response) {
 console.log(JSON.stringify(data, null, 2));
 
 sendJson(response, 200, {
-  reply: answer || "I could not produce an answer.",
+  message: answer || "I could not produce an answer.",
   model: MODEL,
 });
  
