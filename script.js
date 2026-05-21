@@ -139,7 +139,7 @@ function setAvatarEmotion(emotion) {
     mentorAvatar.classList.remove("switching");
   }, 160);
 
-  typeMessage(data.message);
+  typeMessage(data.reply);
 }
 
 function setApiStatus(message, state = "") {
