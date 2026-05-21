@@ -173,7 +173,7 @@ function setLesson(topic) {
   projectTitle.textContent = data.projectTitle;
   projectText.textContent = data.projectText;
   setProgress(data.progress);
-  typeMessage(data.message);
+  typeMessage(data.reply);
 
   if (activeEmotion === "sleepy") {
     setAvatarEmotion("thinking");
