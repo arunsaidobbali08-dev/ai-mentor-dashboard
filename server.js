@@ -86,7 +86,7 @@ function extractAnswer(data) {
     }
   }
 
-  return pieces.join("\n").trim();
+  return pieces.join(" ").trim();
 }
 async function handleMentor(request, response) {
   if (!API_KEY) {
