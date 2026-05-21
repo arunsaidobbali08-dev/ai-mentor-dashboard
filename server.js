@@ -127,8 +127,8 @@ async function handleMentor(request, response) {
         "Keep answers concise: 4 to 8 short sentences unless the student asks for depth.",
       ].join(" "),
       input: buildMentorInput(body),
-      max_output_tokens: 450,
-      store: false,
+      
+
     }),
   });
 
