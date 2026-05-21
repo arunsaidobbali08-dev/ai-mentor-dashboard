@@ -139,8 +139,7 @@ function setAvatarEmotion(emotion) {
     mentorAvatar.classList.remove("switching");
   }, 160);
 
-  typeMessage(data.reply);
-}
+typeMessage(data.reply || data.message || "No response");
 
 function setApiStatus(message, state = "") {
   apiStatus.textContent = message;
